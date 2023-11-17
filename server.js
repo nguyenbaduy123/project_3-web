@@ -5,10 +5,14 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-const port = 3000
+const port = 3500
 
 app.prepare().then(() => {
   const server = express()
+
+  server.get('/home', (req, res) => {
+    app.render(req, res, '/page/home')
+  })
 
   server.get('*', (req, res) => {
     return handle(req, res)
