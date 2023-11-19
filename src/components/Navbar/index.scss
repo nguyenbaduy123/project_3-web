@@ -2,13 +2,16 @@
   background-color: var(--layout-primary);
   color: #fff;
   padding: 8px 16px;
-  .navbar-item {
+  .tab-item {
     padding: 12px;
     display: inline-block;
     border-radius: 6px;
     cursor: pointer;
     &:hover {
       background-color: rgba(29, 41, 57, 0.25);
+    }
+    .tab-item-selected {
+      background-color: #475467 !important;
     }
   }
 }
