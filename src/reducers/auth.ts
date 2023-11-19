@@ -1,19 +1,8 @@
 import { LOGIN_REQUEST, LOGIN_SUCCESS } from '@/constants'
 import { createReducer } from '@reduxjs/toolkit'
-import { JwtPayload, jwtDecode } from 'jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 
-interface AuthState {
-  userId: null | string
-  userName: null | string
-  accessToken: null | string
-  locale: null | string
-  group: null | string
-}
-
-interface ClaimsFromToken extends JwtPayload {
-  user_id: string
-  user_name: string
-}
+import { AuthState, ClaimsFromToken } from './reducers.d'
 
 const initialState: AuthState = {
   userId: null,
@@ -24,12 +13,12 @@ const initialState: AuthState = {
 }
 
 export default createReducer(initialState, {
-  [LOGIN_REQUEST]: (state, payload) => {
+  [LOGIN_REQUEST]: (state) => {
     return Object.assign({}, state, {
       fetching: true,
     })
   },
-  [LOGIN_SUCCESS]: (state, payload) => {
+  [LOGIN_SUCCESS]: (state, { payload }) => {
     const accessToken = payload.access_token
     try {
       const claims: ClaimsFromToken = jwtDecode(accessToken)

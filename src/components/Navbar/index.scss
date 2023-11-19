@@ -10,7 +10,7 @@
     &:hover {
       background-color: rgba(29, 41, 57, 0.25);
     }
-    .tab-item-selected {
+    &.tab-item-selected {
       background-color: #475467 !important;
     }
   }

@@ -1,3 +1,5 @@
+import { LoginSuccessPayload } from './actions'
+
 import { LOGIN_REQUEST, LOGIN_SUCCESS } from '@/constants'
 
 export function loginRequest() {
@@ -6,8 +8,7 @@ export function loginRequest() {
   }
 }
 
-// @ts-ignore
-export const loginSuccess = (payload) => ({
+export const loginSuccess = (payload: LoginSuccessPayload) => ({
   type: LOGIN_SUCCESS,
   payload: payload,
 })

@@ -1,0 +1,96 @@
+{
+  "course": [
+    {
+      "course_id": 1,
+      "cluster_id": 1,
+      "course_name": 1,
+      "course_url": 1,
+      "duration": 1,
+      "level": 1,
+      "description": 1,
+      "num_enrolled": 1,
+      "average_ratings": 1,
+      "price": 1,
+      "instructor_id": 1,
+      "provider_id": 1
+    }
+  ],
+  "lessons": [
+    {
+      "lesson_id": 1,
+      "course_id": 1,
+      "lesson_number": 1,
+      "lesson_name": 1,
+      "duration": 1,
+      "num_video": 1,
+      "num_quizz": 1,
+      "num_reading": 1
+    }
+  ],
+  "reviews": [
+    {
+      "ceviews_id": 1,
+      "course_id": 1,
+      "reviewer": 1,
+      "rate": 1,
+      "comment": 1
+    }
+  ],
+  "instructors": [
+    {
+      "instructor_id": 1,
+      "instructor_name": 1,
+      "bio": 1,
+      "instructor_url": 1
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": 1,
+      "provider_name": 1,
+      "description": 1,
+      "provider_url": 1
+    }
+  ],
+  "categories": [
+    {
+      "category_id": 1,
+      "parent_category_id": 1,
+      "category_name": 1
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "1"
+    }
+  ],
+  "courses_categories": [
+    {
+      "id": 1,
+      "course_id": 1,
+      "category_id": 1
+    }
+  ],
+  "courses_skills": [
+    {
+      "id": 1,
+      "course_id": 1,
+      "skill_id": 1
+    }
+  ],
+  "keywords": [
+    {
+      "keyword_id": 1,
+      "keyword": 1
+    }
+  ],
+  "courses_keyword": [
+    {
+      "id": 1,
+      "course_id": 1,
+      "keyword_id": 1,
+      "relevance_score": 1
+    }
+  ]
+}

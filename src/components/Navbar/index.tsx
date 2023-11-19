@@ -18,7 +18,10 @@ const Navbar = ({ currentTabId }: Props) => {
     <section className="navbar-container">
       <nav>
         {NAVIGATION_ITEMS.map((item) => (
-          <div className={`tab-item${currentTabId == item.id ? ' tab-item-selected' : ''}`}>
+          <div
+            key={item.id}
+            className={`tab-item${currentTabId == item.id ? ' tab-item-selected' : ''}`}
+          >
             {item.name}
           </div>
         ))}
