@@ -11,7 +11,8 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     font-size: 16px;
-    padding: 12px;
+    padding: 8px;
+    height: 42px;
     margin-bottom: 16px;
     display: flex;
     gap: 6px;
@@ -36,33 +37,29 @@
 
   .results-course {
     margin-top: 16px;
-    display: flex;
-    flex-wrap: wrap;
     gap: 8px;
-    justify-content: space-between;
-    flex-direction: row;
+    .course-dum {
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 12px;
+    }
     .course-item {
+      margin: 6px;
       img {
         border-radius: 8px;
       }
-      width: 280px;
       padding: 6px;
       border-radius: 6px;
-      border: 1px solid gainsboro;
-      height: 400px;
       .course-name {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 20px;
         margin: 4px 0;
         overflow: hidden;
-        height: 64px;
       }
       .course-link {
         color: blue;
         opacity: 0.8;
         font-size: 14px;
-        margin: 12px 0;
-        height: 48px;
+        margin: 6px 0;
         &:hover {
           text-decoration: underline;
         }

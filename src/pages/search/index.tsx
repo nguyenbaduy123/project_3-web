@@ -1,5 +1,5 @@
 import Layout from '@/layouts/MainLayout'
-import { Button, Flex, Input, Rate, Select, notification } from 'antd'
+import { Button, Flex, Input, Rate, notification, Space } from 'antd'
 import React, { useState } from 'react'
 import styleSheet from './index.scss'
 import api from '@/api/Api'
@@ -18,6 +18,7 @@ const Search = () => {
   const [fetching, setFetching] = useState(false)
 
   const handlePressEnter = () => {
+    if (!keyword) return
     if (keywords.includes(keyword)) {
       notification.error({
         message: 'Từ khóa đã tồn tại',
@@ -55,15 +56,17 @@ const Search = () => {
     <Layout currentTabId="search">
       <div className="search-container">
         <div className="input-keyword">
-          <Input
-            placeholder="Nhập từ khóa tìm kiếm"
-            onPressEnter={handlePressEnter}
-            value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
-          />
-          <Button onClick={handlePressEnter} type="primary">
-            Thêm
-          </Button>
+          <Space.Compact style={{ width: '100%' }}>
+            <Input
+              placeholder="Nhập từ khóa tìm kiếm"
+              onPressEnter={handlePressEnter}
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+            <Button onClick={handlePressEnter} type="primary">
+              Add
+            </Button>
+          </Space.Compact>
         </div>
         <div className="list-kw-container">
           <label>Danh sách từ khóa</label>
@@ -80,7 +83,7 @@ const Search = () => {
         </div>
         <Flex justify="flex-end">
           <Button loading={fetching} type="primary" onClick={handleSearch}>
-            Tìm kiếm
+            Recommend
           </Button>
         </Flex>
         {!!courses.length && (
@@ -92,17 +95,13 @@ const Search = () => {
               {courses.map((course) => {
                 return (
                   <div className="course-item">
-                    <img src="/static/img/default_course_img.png" />
+                    <div className="course-dum">Course</div>
                     <div className="course-name">{course.course_name}</div>
                     <div className="course-link">
                       <a href="#">{course.course_link.slice(0, 100)}</a>
                     </div>
                     <div className="course-score">
-                      <Rate
-                        allowHalf
-                        value={course.similarity_score * 10}
-                        disabled
-                      />
+                      Similarity score: {course.similarity_score.toFixed(2)}
                     </div>
                   </div>
                 )
