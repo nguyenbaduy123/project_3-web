@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './index.scss'
+import Router from 'next/router'
 
 const NAVIGATION_ITEMS = [
   {
@@ -7,6 +8,11 @@ const NAVIGATION_ITEMS = [
     name: 'Home',
     href: '/home',
   },
+  {
+    id: 'search',
+    name: 'Search',
+    href: '/search'
+  }
 ]
 
 interface Props {
@@ -21,6 +27,7 @@ const Navbar = ({ currentTabId }: Props) => {
           <div
             key={item.id}
             className={`tab-item${currentTabId == item.id ? ' tab-item-selected' : ''}`}
+            onClick={() => Router.push(item.href)}
           >
             {item.name}
           </div>

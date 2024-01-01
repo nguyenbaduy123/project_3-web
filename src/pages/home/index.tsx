@@ -11,7 +11,7 @@ interface Props {
 
 const Home = (props: Props) => {
   return (
-    <Layout>
+    <Layout currentTabId="home">
       <div>Home</div>
     </Layout>
   )

@@ -10,8 +10,6 @@ const port = 3500
 app.prepare().then(() => {
   const server = express()
 
-  server.get('/home', (req, res) => app.render(req, res, '/page/home'))
-
   server.get('*', (req, res) => {
     return handle(req, res)
   })

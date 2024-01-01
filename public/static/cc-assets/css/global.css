@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
   font-family: 'Roboto';
   --text-color1: rgba(0, 0, 0, 0.85);
-  --layout-primary: #506DAD
+  --layout-primary: #506dad;
 }
 
 body {
@@ -20,4 +20,8 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.main-container {
+  padding: 24px;
 }
