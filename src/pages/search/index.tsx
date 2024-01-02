@@ -2,7 +2,7 @@ import Layout from '@/layouts/MainLayout'
 import { Button, Flex, Input, Rate, notification, Space } from 'antd'
 import React, { useState } from 'react'
 import styleSheet from './index.scss'
-import api from '@/api/Api'
+import { recommendationApi } from '@/api/Api'
 import { X } from '@phosphor-icons/react'
 
 interface Course {
@@ -11,7 +11,7 @@ interface Course {
   similarity_score: number
 }
 
-const Search = () => {
+const Search = (props: any) => {
   const [keyword, setKeyword] = useState('')
   const [keywords, setKeywords] = useState<string[]>([])
   const [courses, setCourses] = useState<Course[]>([])
@@ -37,7 +37,7 @@ const Search = () => {
   const handleSearch = async () => {
     setFetching(true)
     try {
-      const resp = await api.post('/keywords_recommendation', {
+      const resp = await recommendationApi.post('/keywords_recommendation', {
         keywords,
         top_n: 10,
       })

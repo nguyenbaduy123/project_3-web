@@ -1,0 +1,22 @@
+.list-course-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.master-categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.master-category {
+  padding: 4px 6px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid gray;
+  white-space: nowrap;
+  border-radius: 12px;
+}

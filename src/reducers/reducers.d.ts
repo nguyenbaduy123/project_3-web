@@ -1,3 +1,5 @@
+import { Category } from '@/actions/actions'
+
 export interface AuthState {
   userId: null | string
   userName: null | string
@@ -9,4 +11,9 @@ export interface AuthState {
 export interface ClaimsFromToken extends JwtPayload {
   user_id: string
   user_name: string
+}
+
+export interface CourseState {
+  categories: Category[]
+  course: []
 }

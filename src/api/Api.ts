@@ -8,7 +8,7 @@ class Api {
     this.instance = axios.create({ baseURL })
   }
 
-  public get = (endpoint: string, params: RequestParams) =>
+  public get = (endpoint: string, params?: RequestParams) =>
     this.instance.get(endpoint, {
       params: { ...params },
     })
@@ -16,6 +16,8 @@ class Api {
   public post = (endpoint: string, params: RequestParams) =>
     this.instance.post(endpoint, params)
 }
-const api = new Api('http://localhost:5000')
 
-export default api
+const recommendationApi = new Api('http://localhost:5000')
+const api = new Api('http://localhost:8080')
+
+export { recommendationApi, api }

@@ -10,9 +10,9 @@ const NAVIGATION_ITEMS = [
   },
   {
     id: 'search',
-    name: 'Search',
-    href: '/search'
-  }
+    name: 'Recommend',
+    href: '/search',
+  },
 ]
 
 interface Props {
@@ -26,7 +26,9 @@ const Navbar = ({ currentTabId }: Props) => {
         {NAVIGATION_ITEMS.map((item) => (
           <div
             key={item.id}
-            className={`tab-item${currentTabId == item.id ? ' tab-item-selected' : ''}`}
+            className={`tab-item${
+              currentTabId == item.id ? ' tab-item-selected' : ''
+            }`}
             onClick={() => Router.push(item.href)}
           >
             {item.name}

@@ -1,0 +1,33 @@
+.course-card-container {
+  padding: 6px;
+  width: 277px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  cursor: pointer;
+  img {
+    border-radius: 8px;
+  }
+  .provider-name {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    height: 32px;
+  }
+
+  .course-name {
+    font-weight: 500;
+    height: 62px;
+  }
+
+  .number-reviews {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .course-master-category {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+  }
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
