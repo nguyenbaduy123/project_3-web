@@ -9,6 +9,11 @@ const NAVIGATION_ITEMS = [
     href: '/home',
   },
   {
+    id: 'filters',
+    name: 'Filters',
+    href: '/filters',
+  },
+  {
     id: 'search',
     name: 'Recommend',
     href: '/search',

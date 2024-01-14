@@ -17,6 +17,16 @@ const Search = (props: any) => {
   const [courses, setCourses] = useState<Course[]>([])
   const [fetching, setFetching] = useState(false)
 
+  // const handleClickCourse = () => {
+  //   Router.push(
+  //     {
+  //       query: { id: course.courseId.toString() },
+  //       pathname: '/details',
+  //     },
+  //     '/details'
+  //   )
+  // }
+
   const handlePressEnter = () => {
     if (!keyword) return
     if (keywords.includes(keyword)) {
