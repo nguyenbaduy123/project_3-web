@@ -6,17 +6,20 @@ import Router from 'next/router'
 
 interface Props {
   course: Course
+  onClick?(course: Course): void
 }
 
-const CourseCard = ({ course }: Props) => {
+const CourseCard = ({ course, onClick }: Props) => {
   const handleClickCourse = () => {
-    Router.push(
-      {
-        query: { id: course.courseId.toString() },
-        pathname: '/details',
-      },
-      '/details'
-    )
+    onClick
+      ? onClick(course)
+      : Router.push(
+          {
+            query: { id: course.courseId.toString() },
+            pathname: '/details',
+          },
+          '/details'
+        )
   }
 
   return (

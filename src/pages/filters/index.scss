@@ -3,3 +3,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.filter-container {
+  .ant-slider-mark-text {
+    white-space: nowrap;
+  }
+}
