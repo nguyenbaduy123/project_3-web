@@ -6,6 +6,7 @@ import { Course } from '../home'
 import { Flex } from 'antd'
 import CourseCard from '@/components/CourseCard'
 import styleSheet from './index.scss'
+import Router from 'next/router'
 
 const Detail: NextPage<any> = (props: any) => {
   const [course, setCourse] = useState<null | Course>(null)
@@ -13,6 +14,8 @@ const Detail: NextPage<any> = (props: any) => {
 
   useEffect(() => {
     if (props.id) getCourse()
+    else if (props.courseUrl) getCourseByUrl()
+    else Router.push('/home')
   }, [])
 
   useEffect(() => {
@@ -22,6 +25,16 @@ const Detail: NextPage<any> = (props: any) => {
   const getCourse = async () => {
     try {
       const resp = await api.get(`/course/${props.id}`)
+      setCourse(resp.data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const getCourseByUrl = async () => {
+    try {
+      const resp = await api.get(`/course/link`, { url: props.courseUrl })
+      
       setCourse(resp.data)
     } catch (error) {
       console.error(error)
@@ -89,23 +102,5 @@ Detail.getInitialProps = async (ctx) => {
   const query = ctx.query
   return { ...query }
 }
-
-// courseId: number
-// clusterId: string
-// courseName: string
-// link: string
-// duration: string
-// level: string
-// description: string
-// numEnrolled: string
-// numReviews: string
-// price: string
-// reviewUrl: string
-// instructorId: string
-// providerName: string
-// averageRatings: string
-// masterCategories: string
-// source: string
-// categories: string
 
 export default Detail

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import styleSheet from './index.scss'
 import { recommendationApi } from '@/api/Api'
 import { X } from '@phosphor-icons/react'
+import Router from 'next/router'
 
 interface Course {
   course_link: string
@@ -17,15 +18,15 @@ const Search = (props: any) => {
   const [courses, setCourses] = useState<Course[]>([])
   const [fetching, setFetching] = useState(false)
 
-  // const handleClickCourse = () => {
-  //   Router.push(
-  //     {
-  //       query: { id: course.courseId.toString() },
-  //       pathname: '/details',
-  //     },
-  //     '/details'
-  //   )
-  // }
+  const handleClickCourse = (course: Course) => {
+    Router.push(
+      {
+        query: { courseUrl: course.course_link },
+        pathname: '/details',
+      },
+      '/details'
+    )
+  }
 
   const handlePressEnter = () => {
     if (!keyword) return
@@ -104,7 +105,7 @@ const Search = (props: any) => {
             <div className="results-course">
               {courses.map((course) => {
                 return (
-                  <div className="course-item">
+                  <div className="course-item" onClick={() => handleClickCourse(course)}>
                     <div className="course-dum">Course</div>
                     <div className="course-name">{course.course_name}</div>
                     <div className="course-link">
